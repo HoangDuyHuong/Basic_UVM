@@ -3,7 +3,7 @@ import uvm_pkg::*;
 `include "uvm_macros.svh"
 
 //=======================================
-// 1. CLASS AGENT CỦA BẠN
+// 1. CLASS AGENT
 //=======================================
 class agent extends uvm_env;
   `uvm_component_utils(agent)
@@ -27,7 +27,7 @@ class agent extends uvm_env;
 endclass
 
 //=======================================
-// 2. CLASS TEST ĐỂ GỌI AGENT
+// 2. CLASS TEST 
 //=======================================
 class my_test extends uvm_test;
   `uvm_component_utils(my_test)
@@ -58,16 +58,12 @@ class my_test extends uvm_test;
 endclass
 
 //=======================================
-// 3. TOP MODULE (SỬA LẠI)
+// 3. TOP MODULE
 //=======================================
 module top;
   
-  // Thêm khối initial này
   initial begin
-    // Yêu cầu UVM bắt đầu chạy test.
-    // Nó sẽ tự động chạy test được chỉ định trong +UVM_TESTNAME
-    // (chính là "my_test" mà bạn đã thêm vào Run Options)
-    run_test();
+       run_test();
   end
 
 endmodule
